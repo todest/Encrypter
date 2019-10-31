@@ -1,7 +1,9 @@
 SHELL=cmd.exe
 OBJS = DE.o EN.o Decrypt.o Encrypt.o Former.o Main.o
-EN: $(OBJS)
+Main: $(OBJS)
 	g++ -o main $(OBJS)
+Main.o:
+	g++ -c Main.cpp
 DE.o:
 	g++ -c DE.cpp
 EN.o:
@@ -12,7 +14,6 @@ Encrypt.o:
 	g++ -c Encrypt.cpp
 Former.o:
 	g++ -c Former.cpp
-Main.o:
-	g++ -c Main.cpp
 clean:
 	del $(OBJS)
+	del main.exe
